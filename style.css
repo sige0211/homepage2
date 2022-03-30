@@ -1,0 +1,269 @@
+@charset "UTF-8";
+
+body{
+  margin: 0;
+  background-color: #F8F8F8;
+  font-family: Arial;
+  letter-spacing: 0.1em;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.appear{
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1), transform 0.3s cubic-bezier(0.4, 0, 1, 1);
+}
+.appear.appeared{
+  opacity: 1;
+  transform: translateY(0px);
+}
+.clicked{
+  opacity: 0.6;
+}
+
+/* サイド */
+aside{
+  font-family: arial black;
+  z-index: 1;
+  position: fixed;
+  top: 2vh;
+  left: -30vh;
+  background: #fff0;
+  height: 96vh;
+  transition: left 0.7s ease-out;
+  box-shadow: 0px 0px 10px #00000038;
+  opacity: 0.95;
+}
+.icon{
+  padding: 0.5em;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: solid 1px;
+  margin: 3rem 2.5vw;
+  background-image: url("img/penguin.png");
+  background-size: 60%;  
+  background-position: center;
+  background-repeat: no-repeat;
+}
+aside ul{
+  display: flex;
+  flex-direction: column;
+}
+aside li{
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 9vh 0;
+  transition: transform 0.3s;
+}
+aside li:hover{
+  transform: scale(1.15,1.15);
+}
+aside li:first-child{
+  margin-top: 8vh;
+}
+aside a.active{
+  transform: scale(1.3,1.3);
+  transition: transform 0.4s, background-color 0.5s;
+  
+}
+
+/* メイン */
+section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  box-shadow: 3px 0 5px #00000038;
+}
+section h1{
+  font-family: arial black;
+  font-size: 2.5rem;
+  margin: 10rem 0 7rem;
+  text-align: center;
+}
+p{
+  text-align: center;
+  line-height: 2.5em;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* top */
+#top{
+  background-color: #91AF88;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  height: 130vh;
+}
+#top h1{
+  margin: 45vh auto 0 auto;
+  display: flex;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
+}
+#top h1.appeared{
+  opacity: 1;
+}
+#top .p-wrapper{
+  margin-top: 30vh;
+}
+#top p{
+  margin-bottom: 3em;
+}
+
+/* works */
+#works{
+  background-color: #5BA6B5;
+  margin-bottom: 5rem;
+}
+/* スライダー */
+.slider-wrapper{
+  width: 100%;
+  overflow: hidden;
+}
+.slider{
+  display: flex;
+  background: #0000001f;
+  padding: 3rem 0 3rem 30vw;
+}
+.slide-box{
+  width: 40vw;
+  height: 24vw;
+  /* border: solid 1px #313131; */
+  border-radius:7px;
+  margin-right: 6vw;
+  background: #fff;
+  opacity: 0.5;
+  color: black;
+  transition: transform 1s, opacity 0.5s;
+  box-shadow: 0px 0px 10px #0000004a;
+}
+.slide-box:first-child{
+  transform: scale(1.1,1.1);
+}
+.now_slide-box{
+  opacity: 1;
+}
+.slider-items{
+  margin: 1rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide-title{
+  margin: 0 9rem 0 17rem;
+  padding: 0 1rem;
+  display: none;
+  border-bottom: 5px double #fff;
+}
+.slide-title.show{
+  display: block;
+}
+.slider-button{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 1rem 0 0;
+  box-shadow: 1px 2px 3px #0000004a;
+  opacity: 0.9;
+}
+.slide-comment{
+  margin: 0 0 5rem;
+  display: none;
+}
+.slide-comment.show{
+  display: block;
+}
+
+/* contact */
+#card{
+  background-color: #9466BC;
+}
+.card-wrapper{
+  perspective: 5000px;
+  position: relative;
+  width: 50vw;
+  height: 30vw;
+  margin-bottom: 5rem;
+}
+.card{
+  position: absolute;
+  width: 50vw;
+  height: 30vw;
+  background: #7774a2;
+  box-shadow: 0px 0px 15px #6B4C86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3em;
+}
+.back{
+  background: rgb(248 248 248);
+  color: black;
+}
+.front.rotate{
+  transform: rotateY(90deg);
+}
+.back{
+  transform: rotateY(-90deg);
+}
+.back.rotate{
+  transform: rotateY(0deg);
+}
+.card .icon{
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: #fff;
+  background-image: url("img/penguin.png");
+  background-size: 60%;  
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card p{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  margin: 0 1rem ;
+  text-align: left;
+  border: solid 1px ;
+  border-radius: 2px;
+  padding: 5px;
+}
+.card span{
+  position: absolute;
+  top: -1.3em;
+  left: 0;
+}
+.card p:first-of-type{
+  margin-bottom: 4rem;
+}
+.card p:last-of-type{
+  margin-top: 4rem;
+}
+.card img{
+  width: 2rem;
+  margin: 0 0.5rem;
+}
+.card-img{
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
