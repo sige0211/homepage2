@@ -117,14 +117,6 @@ p{
 #top h1.appeared{
   opacity: 1;
 }
-.sub-title{
-  margin-left: 300px;
-  opacity: 0;
-  transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
-}
-.sub-title.appeared{
-  opacity: 1;
-}
 #top .p-wrapper{
   margin-top: 20vh;
 }
